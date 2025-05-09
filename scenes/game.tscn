@@ -20,7 +20,7 @@ position = Vector2(-34, 88)
 scale = Vector2(8, 8)
 
 [node name="Elevator" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(-539, 165)
+position = Vector2(-539, 171)
 scale = Vector2(0.53, 0.53)
 script = ExtResource("3_lnu2h")
 

@@ -2,7 +2,7 @@ extends Node2D
 
 var npc_scene = preload("res://scenes/NPC.tscn")
 var floor_positions = [80.0, 250.0]
-@export var number_of_npc = 1
+@export var number_of_npc = 2
 
 func _on_timer_timeout() -> void:
 	if number_of_npc <= 1:

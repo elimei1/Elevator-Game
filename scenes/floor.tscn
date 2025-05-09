@@ -22,9 +22,8 @@ position = Vector2(13.5, 9.99999)
 scale = Vector2(127, 20)
 shape = SubResource("RectangleShape2D_ukw5w")
 
-[node name="floor_zone" type="Area2D" parent="." node_paths=PackedStringArray("elevator")]
+[node name="floor_zone" type="Area2D" parent="."]
 script = ExtResource("1_ukw5w")
-elevator = NodePath("..")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="floor_zone"]
 position = Vector2(-48, 0)
