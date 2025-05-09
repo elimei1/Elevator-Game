@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cak8y50buds1u"]
 
-[ext_resource type="Script" uid="uid://dl5s0lggcel7x" path="res://scenes/npc.gd" id="1_mhefn"]
+[ext_resource type="Script" uid="uid://dl5s0lggcel7x" path="res://scripts/npc.gd" id="1_mhefn"]
 [ext_resource type="Texture2D" uid="uid://dj6qj50skicns" path="res://assets/sprites/Char2.png" id="2_6xvi5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgr7"]
@@ -73,6 +73,7 @@ size = Vector2(10, 12)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 top_level = true
 visibility_layer = 2
+scale = Vector2(4, 4)
 script = ExtResource("1_mhefn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

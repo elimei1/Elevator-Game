@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cprefmyhmd0el"]
 
-[ext_resource type="Script" uid="uid://b4dw8p6cyl2r8" path="res://scenes/elevator.gd" id="1_8lbij"]
+[ext_resource type="Script" uid="uid://b4dw8p6cyl2r8" path="res://scripts/elevator.gd" id="1_8lbij"]
 [ext_resource type="Texture2D" uid="uid://c8hloagheigkx" path="res://assets/sprites/Elevator_new.png" id="1_8o2wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8o2wm"]
@@ -10,6 +10,7 @@ size = Vector2(48, 1)
 size = Vector2(2, 46)
 
 [node name="Elevator" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_8lbij")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -6,6 +6,7 @@
 size = Vector2(1.76378, 0.2)
 
 [node name="Floor" type="CharacterBody2D" groups=["floors"]]
+scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["floors"]]
 position = Vector2(25, -23)

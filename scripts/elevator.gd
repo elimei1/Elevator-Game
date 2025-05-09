@@ -1,7 +1,7 @@
 # Elevator.gd
 extends CharacterBody2D
 
-@export var floor_positions: Array[float] = [98.0, 49.0]
+@export var floor_positions: Array[float] = [-55.0, -260.0, -470.0]
 
 @export var speed: float = 100.0
 
