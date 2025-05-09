@@ -1,15 +1,10 @@
+class_name NPC
 extends CharacterBody2D
 
 var in_zone = false
 var go_back = false
 @export var speed: float = 150.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
-func _physics_process(delta):
-	# Always walk left
-	velocity.x = -speed
-
 
 var elevator_scene = preload("res://scenes/elevator.tscn")
 var elevator = elevator_scene.instantiate()
@@ -32,11 +27,9 @@ func _physics_process(delta):
 		else:
 			velocity.x = -speed
 
-
-	# Simple gravity/floor logic
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
-		velocity.y = 0
+		velocity.y = 0 
 
 	move_and_slide()
