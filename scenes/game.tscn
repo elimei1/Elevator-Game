@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://chivr7kfe2y1f"]
+[gd_scene load_steps=5 format=3 uid="uid://chivr7kfe2y1f"]
 
 [ext_resource type="PackedScene" uid="uid://ywxxd328rh7n" path="res://scenes/floor.tscn" id="1_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://cprefmyhmd0el" path="res://scenes/elevator.tscn" id="2_lnu2h"]
 [ext_resource type="Script" uid="uid://b4dw8p6cyl2r8" path="res://scenes/elevator.gd" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://cak8y50buds1u" path="res://scenes/NPC.tscn" id="4_iywne"]
-[ext_resource type="Script" uid="uid://dl5s0lggcel7x" path="res://scenes/npc.gd" id="5_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bkmujxhj836bo" path="res://scenes/npc_spawner.tscn" id="6_p57ef"]
 
 [node name="Game" type="Node2D"]
 
@@ -25,6 +24,5 @@ position = Vector2(-539, 165)
 scale = Vector2(0.53, 0.53)
 script = ExtResource("3_lnu2h")
 
-[node name="NPC" parent="." instance=ExtResource("4_iywne")]
-position = Vector2(-295, 195)
-script = ExtResource("5_p57ef")
+[node name="NpcSpawner" parent="." instance=ExtResource("6_p57ef")]
+position = Vector2(602, 73)
