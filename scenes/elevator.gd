@@ -63,3 +63,4 @@ func _physics_process(delta):
 			emit_signal("floor_reached", current_floor)
 			# Re-enable the door once we’ve stopped
 			door_shape.disabled = false
+			#comment
