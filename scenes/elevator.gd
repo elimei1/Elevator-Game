@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 var target_y: float = 170.0 
+signal floor_reached(current_y: float)
 
 func _physics_process(delta):
 	var direction = sign(target_y - global_position.y)
@@ -11,6 +12,7 @@ func _physics_process(delta):
 	else:
 		global_position.y = target_y
 		velocity.y = 0.0
+		emit_signal("floor_reached", target_y)
 
 func _input(event):
 	if event.is_action_pressed("elevator_up"):
