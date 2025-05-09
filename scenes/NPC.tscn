@@ -1,23 +1,84 @@
-[gd_scene load_steps=4 format=3 uid="uid://cak8y50buds1u"]
+[gd_scene load_steps=13 format=3 uid="uid://cak8y50buds1u"]
 
 [ext_resource type="Script" uid="uid://dl5s0lggcel7x" path="res://scenes/npc.gd" id="1_mhefn"]
+[ext_resource type="Texture2D" uid="uid://dj6qj50skicns" path="res://assets/sprites/Char2.png" id="2_6xvi5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktgr7"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnjht"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pv12"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6c3r"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slm4e"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6w2b"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we7f3"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxikf"]
+atlas = ExtResource("2_6xvi5")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnyoo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktgr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnjht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pv12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6c3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slm4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6w2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we7f3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxikf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t62y5"]
-size = Vector2(68, 104)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mhefn"]
+size = Vector2(10, 12)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 top_level = true
 visibility_layer = 2
 script = ExtResource("1_mhefn")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bnyoo")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(38, 58)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_t62y5")
 debug_color = Color(0.0463219, 0.588422, 0.755701, 0.42)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(38.75, 55.75)
-scale = Vector2(78.5, 112.5)
-texture = SubResource("PlaceholderTexture2D_mhefn")
