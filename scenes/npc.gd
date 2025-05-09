@@ -1,24 +1,23 @@
 class_name NPC
 extends CharacterBody2D
 
-@export var speed: float = 100.0
+var in_zone = false
+var go_back = false
+@export var speed: float = 150.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var can_move = true
-var npc_floor_y: float
-
-@onready var elevator = null
 
 func _ready():
-	npc_floor_y = global_position.y 
-	elevator = get_node("Elevator")
-	if elevator:
-		elevator.connect("floor_reached", Callable(self, "_on_elevator_floor_reached"))
+	add_to_group("NPC")
+
+func _input(event):
+	if event.is_action_pressed("go_back"):
+		go_back = true
 
 func _physics_process(delta):
-	if can_move:
-		velocity.x = -speed
-	else:
+	if in_zone and not go_back:
 		velocity.x = 0
+	else:
+		velocity.x = speed if go_back else -speed
 
 	if not is_on_floor():
 		velocity.y += gravity * delta

@@ -13,7 +13,7 @@ size = Vector2(1, 297)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phsah"]
 size = Vector2(1, 294)
 
-[node name="Area2D" type="CharacterBody2D"]
+[node name="ElevatorNode" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(96.625, 144.875)

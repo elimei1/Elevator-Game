@@ -5,12 +5,12 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_c41w6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukw5w"]
-size = Vector2(1, 0.0499994)
+size = Vector2(1, 7.82311e-07)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuqtn"]
 size = Vector2(1, 15)
 
-[node name="Area2D" type="CharacterBody2D"]
+[node name="Floor" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(13.5, 0)
@@ -18,16 +18,16 @@ scale = Vector2(127, 20)
 texture = SubResource("PlaceholderTexture2D_c41w6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(13.5, 9.49999)
+position = Vector2(13.5, 9.99999)
 scale = Vector2(127, 20)
 shape = SubResource("RectangleShape2D_ukw5w")
 
-[node name="floor_zone" type="Area2D" parent="."]
+[node name="floor_zone" type="Area2D" parent="." node_paths=PackedStringArray("elevator")]
 script = ExtResource("1_ukw5w")
+elevator = NodePath("..")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="floor_zone"]
 position = Vector2(-48, 0)
 shape = SubResource("RectangleShape2D_kuqtn")
 
-[connection signal="body_entered" from="floor_zone" to="floor_zone" method="_on_elevator_zone_body_entered"]
-[connection signal="body_exited" from="floor_zone" to="floor_zone" method="_on_elevator_zone_body_exited"]
+[connection signal="body_entered" from="floor_zone" to="floor_zone" method="_on_floor_zone_body_entered"]

@@ -1,12 +1,15 @@
 extends Area2D
 
-@onready var npc = null
+@export var floor_tolerance := 400
+@export var elevator: CharacterBody2D 
 
-func _on_elevator_zone_body_entered(body):
-	if body is NPC: 
-		npc = body
-		npc.can_move = false
+func _on_floor_zone_body_entered(body):
 
-func _on_elevator_zone_body_exited(body):
-	if body is NPC:
-		body.can_move = true
+	if not body.is_in_group("NPC"):
+		return
+
+	var y_diff = abs(body.position.y - elevator.position.y)
+	print("npc ", body.position.y)
+	print("elevator ", elevator.position.y)
+	print(y_diff)
+	
