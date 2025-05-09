@@ -1,6 +1,7 @@
 # Elevator.gd
 extends CharacterBody2D
 
+
 @export var floor_positions: Array[float] = [98.0, 49.0]
 
 @export var speed: float = 100.0
@@ -45,6 +46,10 @@ func _input(event):
 			target_floor -= 1
 		return
 
+const SPEED = 100.0
+var target_y: float = 170.0 
+
+
 func _physics_process(delta):
 	var ty = floor_positions[target_floor]
 	var dy = ty - global_position.y
@@ -54,6 +59,7 @@ func _physics_process(delta):
 		velocity.y = sign(dy) * speed
 		move_and_slide()
 	else:
+
 		# Arrived (or already there)
 		velocity = Vector2.ZERO
 		global_position.y = ty
@@ -63,3 +69,13 @@ func _physics_process(delta):
 			emit_signal("floor_reached", current_floor)
 			# Re-enable the door once we’ve stopped
 			door_shape.disabled = false
+
+		global_position.y = target_y
+		velocity.y = 0.0
+
+func _input(event):
+	if event.is_action_pressed("elevator_up"):
+		target_y -= 158.0
+	elif event.is_action_pressed("elevator_down"):
+		target_y += 158.0
+

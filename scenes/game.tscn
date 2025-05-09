@@ -9,6 +9,21 @@
 position = Vector2(6, 4)
 scale = Vector2(1280, 720)
 
+
+[node name="Floor1" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(-34, 248)
+scale = Vector2(8, 8)
+
+[node name="Floor2" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(-34, 88)
+scale = Vector2(8, 8)
+
+[node name="Elevator" parent="." instance=ExtResource("2_lnu2h")]
+position = Vector2(-539, 171)
+scale = Vector2(0.53, 0.53)
+script = ExtResource("3_lnu2h")
+
+
 [node name="NpcSpawner" parent="." instance=ExtResource("6_p57ef")]
 visible = false
 position = Vector2(602, 73)

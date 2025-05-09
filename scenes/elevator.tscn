@@ -9,8 +9,12 @@ size = Vector2(48, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8lbij"]
 size = Vector2(2, 46)
 
+
 [node name="Elevator" type="CharacterBody2D"]
 script = ExtResource("1_8lbij")
+
+[node name="ElevatorNode" type="CharacterBody2D"]
+
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(96, 145)

@@ -1,5 +1,6 @@
 extends Area2D
 
+
 @onready var npc: NPC = null
 @onready var elevator: Node2D = null
 
@@ -34,3 +35,18 @@ func _input(event):
 		get_parent().remove_child(npc)
 		elevator.add_child(npc)
 		npc.global_position = world_pos
+
+var npcs_on_floor: Array = []
+
+func _on_elevator_zone_body_entered(body):
+	if not body.is_in_group("NPC"):
+		return
+	body.in_zone = true
+	npcs_on_floor.append(body)
+	body.queue_free()
+	
+func _on_elevator_zone_body_exited(body):
+	if not body.is_in_group("NPC"):
+		return
+	body.in_zone = false
+
