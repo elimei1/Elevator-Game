@@ -1,7 +1,6 @@
-class_name NPC
 extends CharacterBody2D
 
-@export var speed: float = 1.0
+@export var speed: float = 100.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move = true
 

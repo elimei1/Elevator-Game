@@ -8,6 +8,8 @@ size = Vector2(68, 104)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mhefn"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+top_level = true
+visibility_layer = 2
 script = ExtResource("1_mhefn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

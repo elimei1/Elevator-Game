@@ -1,22 +1,16 @@
 extends Node2D
 
-@export var npc_scene: PackedScene
-@export var floor_positions := [80.0, 250.0]
-@export var spawn_x: float = 500.0
-var number_of_npc = 1
-
-func _ready():
-	spawn_npc()
-
-func spawn_npc():
-	for i in range(number_of_npc):
-		var floor_y = floor_positions.pick_random()
-		var npc := npc_scene.instantiate() as NPC
-		npc.global_position = Vector2(spawn_x, floor_y)
-		add_child(npc)
-		_on_timer_timeout()
-	
+var npc_scene = preload("res://scenes/NPC.tscn")
+var floor_positions = [80.0, 250.0]
+@export var number_of_npc = 5
 
 func _on_timer_timeout() -> void:
+	if number_of_npc <= 1:
+		get_node("Timer").stop()
+	var npc = npc_scene.instantiate()
+	var floor_y = floor_positions.pick_random()
+	npc.position = Vector2(500, floor_y)
+	add_child(npc)
 	number_of_npc -= 1
-	spawn_npc()
+	print(number_of_npc)
+	
