@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://chivr7kfe2y1f"]
+[gd_scene load_steps=3 format=3 uid="uid://chivr7kfe2y1f"]
 
-[ext_resource type="PackedScene" uid="uid://ywxxd328rh7n" path="res://scenes/floor.tscn" id="1_yqjtg"]
-[ext_resource type="PackedScene" uid="uid://cprefmyhmd0el" path="res://scenes/elevator.tscn" id="2_lnu2h"]
-[ext_resource type="Script" uid="uid://b4dw8p6cyl2r8" path="res://scenes/elevator.gd" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://c4yeauusssk1g" path="res://scenes/Level.tscn" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://bkmujxhj836bo" path="res://scenes/npc_spawner.tscn" id="6_p57ef"]
 
 [node name="Game" type="Node2D"]
@@ -11,18 +9,9 @@
 position = Vector2(6, 4)
 scale = Vector2(1280, 720)
 
-[node name="Floor1" parent="." instance=ExtResource("1_yqjtg")]
-position = Vector2(-34, 248)
-scale = Vector2(8, 8)
-
-[node name="Floor2" parent="." instance=ExtResource("1_yqjtg")]
-position = Vector2(-34, 88)
-scale = Vector2(8, 8)
-
-[node name="Elevator" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(-539, 165)
-scale = Vector2(0.53, 0.53)
-script = ExtResource("3_lnu2h")
-
 [node name="NpcSpawner" parent="." instance=ExtResource("6_p57ef")]
+visible = false
 position = Vector2(602, 73)
+
+[node name="Level" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(79, 6)
