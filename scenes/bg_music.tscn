@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://1doqjbk5k720"]
+
+[ext_resource type="AudioStream" uid="uid://c5yvmj7hq1cqg" path="res://assets/music/that-game-arcade-236111.mp3" id="1_f6gl3"]
+
+[node name="BgMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_f6gl3")
+autoplay = true
