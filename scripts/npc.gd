@@ -2,8 +2,8 @@ extends CharacterBody2D
 class_name NPC
 
 @export var speed: float = 200.0
-@export var max_patience: float = 32.0    # maximale Breite der Bar in Pixeln
-@export var patience_loss_rate: float = 3 # Pixel pro Sekunde
+@export var max_patience: float = 32.0
+@export var patience_loss_rate: float = 3
 
 var patience: float
 var in_elevator: bool = false
@@ -14,6 +14,8 @@ var can_move: bool = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
+  var target_y_values = [550, 350, 150] 
+	target_y = target_y_values[target_floor_index]  
 	# Patience-Bar initialisieren
 	bar.min_value = 0
 	bar.max_value = max_patience
@@ -49,6 +51,3 @@ func _physics_process(delta):
 		velocity.y = 0
 	else:
 		velocity.y = velocity.y + gravity * delta
-
-	anim.play("default")
-	move_and_slide()

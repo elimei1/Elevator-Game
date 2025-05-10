@@ -5,18 +5,18 @@
 [ext_resource type="Script" uid="uid://bwctcj6y1i2pj" path="res://scripts/elevator_zone.gd" id="3_jmdsd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmdsd"]
-size = Vector2(14.75, 16.125)
+size = Vector2(23.2851, 0.596992)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gisge"]
-size = Vector2(48, 1)
+size = Vector2(48, 2.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pr5mj"]
-size = Vector2(1, 43.5)
+size = Vector2(1, 42.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xslfi"]
 size = Vector2(48, 1)
 
-[node name="Elevator" type="CharacterBody2D"]
+[node name="Elevator" type="CharacterBody2D" groups=["elevator"]]
 scale = Vector2(4, 4)
 script = ExtResource("1_8lbij")
 
@@ -25,26 +25,26 @@ position = Vector2(96, 145)
 texture = ExtResource("1_8o2wm")
 
 [node name="ElevatorZone" type="Area2D" parent="."]
-visible = false
 position = Vector2(77.5, 151.5)
 script = ExtResource("3_jmdsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorZone"]
-position = Vector2(-0.25, 2.125)
+position = Vector2(29.25, 0.5)
+rotation = -1.56024
 shape = SubResource("RectangleShape2D_jmdsd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(77.5, 151.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(9.5, 22)
+position = Vector2(9.5, 21.375)
 shape = SubResource("RectangleShape2D_gisge")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(88.1875, 173)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-24.6875, -22)
+position = Vector2(-24.6875, -22.5)
 shape = SubResource("RectangleShape2D_pr5mj")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]

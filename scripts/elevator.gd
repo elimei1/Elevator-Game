@@ -2,57 +2,31 @@
 extends CharacterBody2D
 class_name ELEVATOR
 
-@export var floor_positions: Array[float] = [-55.0, -260.0, -470.0]
-
-@export var speed: float = 100.0
-
-# Input actions (make sure you’ve bound these in InputMap)
-const OPEN_DOOR   := "open_door"
+var floor_positions = Global.floor_positions
+signal floor_reached(floor_index: int)
+signal floor_left(index: int)
+@export var speed: float = 200.0
 const ELEV_UP     := "elevator_up"
 const ELEV_DOWN   := "elevator_down"
 
-
-# The door’s CollisionShape2D (must be a direct child named “DoorShape”)
-@onready var door1: CollisionShape2D = $Door1
-@onready var door2: CollisionShape2D = $Door2
-@onready var door3: CollisionShape2D = $Door3
-
-# Track where we are vs. where we want to go
 var current_floor: int = 0
 var target_floor: int = 0
 
-signal floor_reached(floor_index: int)
-
 func _ready():
-	# Snap to initial floor
 	global_position.y = floor_positions[current_floor]
 	set_process_input(true)
 
 func _input(event):
-	# 1) Open door if stopped at a floor
-	if event.is_action_pressed(OPEN_DOOR) and current_floor == target_floor:
-		door1.disabled = true
-		door2.disabled = true
-		door3.disabled = true
-		return
-
-	# 2) Queue movement up
 	if event.is_action_pressed(ELEV_UP) and current_floor == target_floor:
 		if target_floor < floor_positions.size() - 1:
-			# close the door before moving
-			door1.disabled = false
-			door2.disabled = false
-			door3.disabled = false
 			target_floor += 1
+			emit_signal("floor_left", current_floor)
 		return
 
-	# 3) Queue movement down
 	if event.is_action_pressed(ELEV_DOWN) and current_floor == target_floor:
 		if target_floor > 0:
-			door1.disabled = false
-			door2.disabled = false
-			door3.disabled = false
 			target_floor -= 1
+			emit_signal("floor_left", current_floor)
 		return
 
 func _physics_process(delta):
@@ -70,6 +44,3 @@ func _physics_process(delta):
 	if abs(dy) <= 1.0 and current_floor != target_floor:
 		current_floor = target_floor
 		emit_signal("floor_reached", current_floor)
-		door1.disabled = false
-		door2.disabled = false
-		door3.disabled = false
