@@ -22,3 +22,11 @@ func _on_elevator_arrived(index):
 func _on_elevator_left(index):
 	if index == floor_index:
 		door.disabled = false
+
+
+func _on_back_button_1_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_burger_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
