@@ -31,7 +31,6 @@ script = ExtResource("3_jmdsd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorZone"]
 position = Vector2(29.25, 0.5)
 rotation = -1.56024
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jmdsd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

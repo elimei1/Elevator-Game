@@ -1,0 +1,80 @@
+[gd_scene load_steps=16 format=3 uid="uid://c1f7brshjaj2a"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_ptake"]
+[ext_resource type="Texture2D" uid="uid://cyx5t22xwicvy" path="res://assets/sprites/background.jpg" id="2_2nypq"]
+[ext_resource type="Texture2D" uid="uid://i8c5rft1bxn3" path="res://assets/sprites/buttons/Play_Normal.png" id="2_l72w3"]
+[ext_resource type="Texture2D" uid="uid://3g56mnjks51w" path="res://assets/sprites/buttons/Play_Pressed.png" id="3_826wr"]
+[ext_resource type="Texture2D" uid="uid://b6ynrm68tr37v" path="res://assets/sprites/Title.png" id="3_bky6r"]
+[ext_resource type="Texture2D" uid="uid://6aub8ix7ldfp" path="res://assets/sprites/buttons/Play_Hover.png" id="4_ucygd"]
+[ext_resource type="Texture2D" uid="uid://chytjr83wdanl" path="res://assets/sprites/buttons/Quit_Normal.png" id="5_ucygd"]
+[ext_resource type="Texture2D" uid="uid://bruy28yvlb73q" path="res://assets/sprites/buttons/Quit_Pressed.png" id="6_mipys"]
+[ext_resource type="Texture2D" uid="uid://b5f0k8ll5w470" path="res://assets/sprites/buttons/Quit_Hover.png" id="7_8a8k8"]
+[ext_resource type="Texture2D" uid="uid://ymvykq8nd2fe" path="res://assets/sprites/buttons/Credits_Normal.png" id="8_7la6k"]
+[ext_resource type="Texture2D" uid="uid://crms5ebkt1lhl" path="res://assets/sprites/buttons/Credits_Pressed.png" id="9_2nypq"]
+[ext_resource type="Texture2D" uid="uid://bk2aomt7pw57o" path="res://assets/sprites/buttons/Credits_Hover.png" id="10_bky6r"]
+[ext_resource type="Texture2D" uid="uid://bwrx1v5ruor17" path="res://assets/sprites/buttons/Help_Normal.png" id="10_ptake"]
+[ext_resource type="Texture2D" uid="uid://chq2lh3raresk" path="res://assets/sprites/buttons/Help_Pressed.png" id="11_hubol"]
+[ext_resource type="Texture2D" uid="uid://cbfg01o1lyw62" path="res://assets/sprites/buttons/Help_Hover.png" id="12_8vx4p"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptake")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_left = -128.0
+offset_top = -26.0
+offset_right = 1274.0
+offset_bottom = 675.0
+texture = ExtResource("2_2nypq")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 67.0
+offset_right = 1000.0
+offset_bottom = 291.0
+texture = ExtResource("3_bky6r")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 401.0
+offset_right = 684.0
+offset_bottom = 605.0
+
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_l72w3")
+texture_pressed = ExtResource("3_826wr")
+texture_hover = ExtResource("4_ucygd")
+
+[node name="Credits" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("8_7la6k")
+texture_pressed = ExtResource("9_2nypq")
+texture_hover = ExtResource("10_bky6r")
+
+[node name="Help" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_ptake")
+texture_pressed = ExtResource("11_hubol")
+texture_hover = ExtResource("12_8vx4p")
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_ucygd")
+texture_pressed = ExtResource("6_mipys")
+texture_hover = ExtResource("7_8a8k8")
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

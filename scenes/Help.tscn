@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://bli12rbwuy8ux"]
+
+[ext_resource type="Texture2D" uid="uid://cyx5t22xwicvy" path="res://assets/sprites/background.jpg" id="1_fihn4"]
+[ext_resource type="Script" path="res://scripts/help.gd" id="1_n7bmx"]
+[ext_resource type="Texture2D" uid="uid://jn1041i5npxk" path="res://assets/sprites/Arrow.png" id="2_vtcus"]
+[ext_resource type="FontFile" uid="uid://cjfncce6nir7i" path="res://assets/fonts/PPNeueBit-Bold.otf" id="3_vtcus"]
+[ext_resource type="Texture2D" uid="uid://cystkhmbs0m0d" path="res://assets/sprites/Arrow Down.png" id="4_acoij"]
+[ext_resource type="Texture2D" uid="uid://bojih0pxhmj1f" path="res://assets/sprites/buttons/Back_Normal.png" id="6_u7tm1"]
+[ext_resource type="Texture2D" uid="uid://clipooolev7o6" path="res://assets/sprites/buttons/Back_Pressed.png" id="7_vhlfi"]
+[ext_resource type="Texture2D" uid="uid://u04jg6l3hvcq" path="res://assets/sprites/buttons/Back_Hover.png" id="8_r0ohh"]
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n7bmx")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.380392)
+offset_left = -128.0
+offset_top = -26.0
+offset_right = 1274.0
+offset_bottom = 675.0
+texture = ExtResource("1_fihn4")
+
+[node name="ArrowUP" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -29.0
+offset_top = -11.0
+offset_right = 451.0
+offset_bottom = 229.0
+texture = ExtResource("2_vtcus")
+
+[node name="UP" type="Label" parent="."]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 89.0
+offset_right = 1014.0
+offset_bottom = 130.0
+theme_override_fonts/font = ExtResource("3_vtcus")
+theme_override_font_sizes/font_size = 58
+text = "Press \"Arrow-Key Up\" to move elevator up"
+
+[node name="ArrowDOWN" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -133.0
+offset_top = 114.0
+offset_right = 347.0
+offset_bottom = 354.0
+texture = ExtResource("4_acoij")
+
+[node name="DOWN" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 215.0
+offset_right = 1116.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("3_vtcus")
+theme_override_font_sizes/font_size = 58
+text = "Press \"Arrow-Key Down\" to move elevator down"
+
+[node name="Instructions" type="Label" parent="."]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 328.0
+offset_right = 1628.0
+offset_bottom = 413.0
+theme_override_fonts/font = ExtResource("3_vtcus")
+theme_override_font_sizes/font_size = 58
+text = "Pick up the guests and bring them to their desired floor.
+Watch out! They're in a hurry"
+
+[node name="BackButton1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 528.0
+offset_right = 750.0
+offset_bottom = 576.0
+texture_normal = ExtResource("6_u7tm1")
+texture_pressed = ExtResource("7_vhlfi")
+texture_hover = ExtResource("8_r0ohh")
+
+[connection signal="pressed" from="BackButton1" to="." method="_on_back_button_1_pressed"]
