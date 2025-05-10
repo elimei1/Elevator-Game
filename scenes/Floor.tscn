@@ -23,5 +23,6 @@ scale = Vector2(127, 20)
 shape = SubResource("RectangleShape2D_ukw5w")
 
 [node name="Door" type="CollisionShape2D" parent="."]
+z_index = 2
 position = Vector2(-79.75, -17.75)
 shape = SubResource("RectangleShape2D_dmu3r")

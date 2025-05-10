@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://yjskovtb3fv2"]
+
+[ext_resource type="PackedScene" uid="uid://ywxxd328rh7n" path="res://scenes/Floor.tscn" id="1_3iwpl"]
+[ext_resource type="Texture2D" uid="uid://dcjykf24ud4es" path="res://assets/sprites/Floor1.png" id="2_kpqvn"]
+[ext_resource type="Texture2D" uid="uid://cjql3mp30ydwm" path="res://assets/sprites/Floor2.png" id="3_thei6"]
+[ext_resource type="Texture2D" uid="uid://c2ff4caqou5av" path="res://assets/sprites/Floor3.png" id="4_iw2mh"]
+[ext_resource type="PackedScene" uid="uid://bkmujxhj836bo" path="res://scenes/npc_spawner.tscn" id="5_opw0y"]
+[ext_resource type="PackedScene" uid="uid://cprefmyhmd0el" path="res://scenes/elevator.tscn" id="6_g7sqe"]
+[ext_resource type="FontFile" uid="uid://cjfncce6nir7i" path="res://assets/fonts/PPNeueBit-Bold.otf" id="7_turoa"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Floor" parent="." instance=ExtResource("1_3iwpl")]
+position = Vector2(588, 616)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(25, -23)
+texture = ExtResource("2_kpqvn")
+
+[node name="Floor2" parent="." instance=ExtResource("1_3iwpl")]
+position = Vector2(588, 408)
+floor_index = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor2"]
+position = Vector2(25, -23)
+texture = ExtResource("3_thei6")
+
+[node name="Floor3" parent="." instance=ExtResource("1_3iwpl")]
+position = Vector2(588, 200)
+floor_index = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor3"]
+position = Vector2(25, -23)
+texture = ExtResource("4_iw2mh")
+
+[node name="NpcSpawner" parent="." instance=ExtResource("5_opw0y")]
+position = Vector2(873, 286)
+number_of_npc = 25
+
+[node name="Elevator" parent="." instance=ExtResource("6_g7sqe")]
+position = Vector2(-190, -61)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 943.0
+offset_top = 527.0
+offset_right = 1113.0
+offset_bottom = 582.0
+theme_override_fonts/font = ExtResource("7_turoa")
+theme_override_font_sizes/font_size = 80
+text = "Floor 0"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 945.0
+offset_top = 318.0
+offset_right = 1102.0
+offset_bottom = 373.0
+theme_override_fonts/font = ExtResource("7_turoa")
+theme_override_font_sizes/font_size = 80
+text = "Floor 1"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 1
+offset_left = 936.0
+offset_top = 109.0
+offset_right = 1106.0
+offset_bottom = 164.0
+theme_override_fonts/font = ExtResource("7_turoa")
+theme_override_font_sizes/font_size = 80
+text = "Floor 2"

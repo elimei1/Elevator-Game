@@ -23,5 +23,11 @@ func _on_timer_timeout() -> void:
 	npc.target_floor_index = target_floor_index
 	npc.target_y = floor_positions[target_floor_index]
 	
+	var label = Label.new()
+	label.text = str(target_floor_index)  
+	label.position = Vector2(-4, -32) 
+	label.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST_WITH_MIPMAPS
+	npc.add_child(label)
+	
 	add_child(npc)
 	number_of_npc -= 1
