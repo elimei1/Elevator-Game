@@ -7,6 +7,7 @@ class_name NPC
 # Rate in Pixel pro Sekunde (je kleiner, desto langsamer schrumpft die Bar)
 @export var patience_loss_rate: float = 1.5
 
+
 # how quickly we ramp up/down in px/s²
 @export var acceleration: float = 500.0
 @export var deceleration: float = 500.0
@@ -36,6 +37,10 @@ func _ready():
 	
 
 func _physics_process(delta):
+	var label = get_tree().get_first_node_in_group("label")
+	var text = "Lives left: "
+	var whole_text = str(text, str(Global.points))
+	label.text = whole_text
 	patience -= patience_loss_rate * delta
 	if patience<0:
 		patience = 0
@@ -43,8 +48,10 @@ func _physics_process(delta):
 #	var target_speed_x: float = 0.0
 	if patience == 0 and has_left == false:
 		anim.play("death")
+		Global.points -= 1
+		if Global.points <= 0:
+			print("Game over")
 		queue_free()
-		return
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta

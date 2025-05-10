@@ -35,7 +35,6 @@ texture = ExtResource("4_iw2mh")
 
 [node name="NpcSpawner" parent="." instance=ExtResource("5_opw0y")]
 position = Vector2(873, 286)
-number_of_npc = 25
 
 [node name="Elevator" parent="." instance=ExtResource("6_g7sqe")]
 position = Vector2(-190, -61)
