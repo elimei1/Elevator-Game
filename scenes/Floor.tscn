@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ywxxd328rh7n"]
+[gd_scene load_steps=5 format=3 uid="uid://ywxxd328rh7n"]
 
 [ext_resource type="Texture2D" uid="uid://cpvh36jat16m4" path="res://assets/sprites/Floor.png" id="1_dmu3r"]
+[ext_resource type="Script" uid="uid://uwr8mqacdn8j" path="res://scripts/Floor.gd" id="2_al5gx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ukw5w"]
 size = Vector2(1.76378, 0.2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmu3r"]
+size = Vector2(1.375, 41)
+
 [node name="Floor" type="CharacterBody2D" groups=["floors"]]
 scale = Vector2(4, 4)
+script = ExtResource("2_al5gx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["floors"]]
 position = Vector2(25, -23)
@@ -16,3 +21,7 @@ texture = ExtResource("1_dmu3r")
 position = Vector2(29, 6)
 scale = Vector2(127, 20)
 shape = SubResource("RectangleShape2D_ukw5w")
+
+[node name="Door" type="CollisionShape2D" parent="."]
+position = Vector2(-79.75, -17.75)
+shape = SubResource("RectangleShape2D_dmu3r")

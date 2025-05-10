@@ -2,6 +2,9 @@ extends Area2D
 
 @onready var npc: NPC = null
 @onready var elevator = get_tree().get_current_scene().get_node("Elevator")
+var layer = 2
+var npc_queue: Array = []
+var releasing = false
 
 func _ready():
 	if not elevator:
@@ -10,21 +13,14 @@ func _ready():
 
 func _on_elevator_zone_body_entered(body):
 	if body is NPC:
-		npc = body
-		npc.in_elevator = true
+		body.in_elevator = true
+		npc_queue.append(body)
+		body.set_collision_layer_value(1, false)
+		body.set_collision_layer_value(layer, true)
+		body.set_meta("elevator_layer", layer)
+		layer += 1
 
 func _on_elevator_zone_body_exited(body):
 	if body is NPC:
 		body.in_elevator = false
-
-func _input(event):
-	if event.is_action_pressed("elevator_open") and npc:
-		
-		for floor in get_tree().get_nodes_in_group("floors"):
-			if abs(floor.global_position.y - elevator.global_position.y) < 2.0:
-				var col = floor.get_node("CollisionShape2D")
-				col.disabled = true
-				break
-				
-	if event.is_action_pressed("npc_out"): 
-		npc.velocity.x = 100
+		print(body.collision_mask)

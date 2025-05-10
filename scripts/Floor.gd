@@ -1,8 +1,24 @@
-# Floor.gd
-extends StaticBody2D
+extends CharacterBody2D
 
 @export var floor_index: int = 0
-@onready var door1 = get_tree().get_sec_node_in_group("doors") 
+@onready var door: CollisionShape2D = $Door
 
 func _ready():
-	door1.disabled = false
+	var elevator = get_tree().get_first_node_in_group("elevator")
+	if elevator:
+		elevator.connect("floor_reached", Callable(self, "_on_elevator_arrived"))
+		elevator.connect("floor_left", Callable(self, "_on_elevator_left"))
+		if elevator.current_floor == floor_index:
+			door.disabled = true
+	else:
+		push_error("Elevator not found!")
+
+func _on_elevator_arrived(index):
+	if index == floor_index:
+		door.disabled = true
+	else:
+		door.disabled = false
+
+func _on_elevator_left(index):
+	if index == floor_index:
+		door.disabled = false
