@@ -1,12 +1,10 @@
-
 [gd_scene load_steps=6 format=3 uid="uid://c2nrlqk8u462o"]
 
 [ext_resource type="Texture2D" uid="uid://bojih0pxhmj1f" path="res://assets/sprites/buttons/Back_Normal.png" id="1_gw1d4"]
-[ext_resource type="Script" uid="uid://bgbrmy74dlytv" path="res://scripts/credits.gd" id="1_y8nor"]
+[ext_resource type="Script" path="res://scripts/credits.gd" id="1_y8nor"]
 [ext_resource type="Texture2D" uid="uid://n3psqybxg0oi" path="res://assets/sprites/Credits.png" id="2_al82v"]
 [ext_resource type="Texture2D" uid="uid://clipooolev7o6" path="res://assets/sprites/buttons/Back_Pressed.png" id="2_y8nor"]
 [ext_resource type="Texture2D" uid="uid://u04jg6l3hvcq" path="res://assets/sprites/buttons/Back_Hover.png" id="3_al82v"]
-
 
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_y8nor")

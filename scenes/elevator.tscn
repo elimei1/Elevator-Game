@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bwctcj6y1i2pj" path="res://scripts/elevator_zone.gd" id="3_jmdsd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmdsd"]
-size = Vector2(23.2851, 0.596992)
+size = Vector2(23.2851, 41.312)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gisge"]
 size = Vector2(48, 2.25)
@@ -29,7 +29,7 @@ position = Vector2(77.5, 151.5)
 script = ExtResource("3_jmdsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ElevatorZone"]
-position = Vector2(29.25, 0.5)
+position = Vector2(8.89361, 0.28511)
 rotation = -1.56024
 shape = SubResource("RectangleShape2D_jmdsd")
 

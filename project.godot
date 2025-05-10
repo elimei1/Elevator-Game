@@ -23,6 +23,12 @@ BgMusic="*res://scenes/bg_music.tscn"
 [display]
 
 window/size/viewport_width=1550
+window/stretch/mode="viewport"
+
+[global_group]
+
+label=""
+death_zone=""
 
 [input]
 

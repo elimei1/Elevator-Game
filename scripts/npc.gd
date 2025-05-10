@@ -45,7 +45,7 @@ func _physics_process(delta):
 	if patience<0:
 		patience = 0
 	bar.value = patience
-#	var target_speed_x: float = 0.0
+
 	if patience == 0 and has_left == false:
 		anim.play("death")
 		Global.points -= 1

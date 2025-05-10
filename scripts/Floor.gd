@@ -30,3 +30,9 @@ func _on_back_button_1_pressed() -> void:
 
 func _on_burger_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/MainMenu.tscn")
+
+
+func _on_npc_body_entered(body):
+	print("seath")
+	if body is NPC:
+		body.queue_free()

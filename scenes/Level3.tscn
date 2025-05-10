@@ -66,3 +66,10 @@ offset_bottom = 164.0
 theme_override_fonts/font = ExtResource("7_turoa")
 theme_override_font_sizes/font_size = 80
 text = "Floor 2"
+
+[node name="Points" type="Label" parent="." groups=["label"]]
+offset_left = 1179.0
+offset_top = 71.0
+offset_right = 1563.0
+offset_bottom = 203.0
+theme_override_font_sizes/font_size = 50

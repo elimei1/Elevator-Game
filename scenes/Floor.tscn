@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ywxxd328rh7n"]
+[gd_scene load_steps=6 format=3 uid="uid://ywxxd328rh7n"]
 
 [ext_resource type="Texture2D" uid="uid://cpvh36jat16m4" path="res://assets/sprites/Floor.png" id="1_dmu3r"]
 [ext_resource type="Script" uid="uid://uwr8mqacdn8j" path="res://scripts/Floor.gd" id="2_al5gx"]
@@ -8,6 +8,9 @@ size = Vector2(1.76378, 0.2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dmu3r"]
 size = Vector2(1.375, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_al5gx"]
+size = Vector2(3.5, 43)
 
 [node name="Floor" type="CharacterBody2D" groups=["floors"]]
 scale = Vector2(4, 4)
@@ -26,3 +29,11 @@ shape = SubResource("RectangleShape2D_ukw5w")
 z_index = 2
 position = Vector2(-82, -17.25)
 shape = SubResource("RectangleShape2D_dmu3r")
+
+[node name="Area2D" type="Area2D" parent="." groups=["death_zone"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(138.25, -17.75)
+shape = SubResource("RectangleShape2D_al5gx")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_npc_body_entered"]
