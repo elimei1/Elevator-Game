@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4yeauusssk1g"]
+[gd_scene load_steps=10 format=3 uid="uid://c4yeauusssk1g"]
 
 [ext_resource type="Texture2D" uid="uid://cyx5t22xwicvy" path="res://assets/sprites/background.jpg" id="1_dke22"]
 [ext_resource type="PackedScene" uid="uid://ywxxd328rh7n" path="res://scenes/Floor.tscn" id="2_qifjx"]
@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cjql3mp30ydwm" path="res://assets/sprites/Floor2.png" id="4_rccsh"]
 [ext_resource type="Texture2D" uid="uid://c2ff4caqou5av" path="res://assets/sprites/Floor3.png" id="5_ax7ne"]
 [ext_resource type="PackedScene" uid="uid://cprefmyhmd0el" path="res://scenes/elevator.tscn" id="5_qifjx"]
-[ext_resource type="Texture2D" uid="uid://dkvmwqxba05b4" path="res://assets/sprites/buttons/Burger_Normal.png" id="8_2eouu"]
-[ext_resource type="Texture2D" uid="uid://6ley0foh5ga6" path="res://assets/sprites/buttons/Burger_Pressedl.png" id="9_rccsh"]
+[ext_resource type="Texture2D" uid="uid://c4ev37cp01yqp" path="res://assets/sprites/buttons/burger.png" id="8_2eouu"]
 [ext_resource type="Script" uid="uid://dqq1b6l8xlbti" path="res://scripts/burger.gd" id="10_rccsh"]
 
 [node name="Level" type="Node2D"]
@@ -50,13 +49,12 @@ position = Vector2(873, 286)
 position = Vector2(-190, -61)
 
 [node name="burger" type="TextureButton" parent="."]
-offset_left = -219.0
-offset_top = -151.0
-offset_right = 773.0
-offset_bottom = 345.0
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 47.0
+offset_bottom = 48.0
 texture_normal = ExtResource("8_2eouu")
-texture_pressed = ExtResource("9_rccsh")
-stretch_mode = 0
+texture_pressed = ExtResource("8_2eouu")
 script = ExtResource("10_rccsh")
 
 [connection signal="pressed" from="burger" to="Floor" method="_on_burger_pressed"]

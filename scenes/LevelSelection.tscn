@@ -1,0 +1,64 @@
+[gd_scene load_steps=12 format=3 uid="uid://civ47y3wp6clb"]
+
+[ext_resource type="Script" uid="uid://bktgsg6ahfe0m" path="res://scripts/level_selection.gd" id="1_h06n6"]
+[ext_resource type="Texture2D" uid="uid://b01nesom5ne64" path="res://assets/sprites/buttons/level/Level1_Normal.png" id="1_y5nje"]
+[ext_resource type="Texture2D" uid="uid://c8rdni3ywn1ed" path="res://assets/sprites/buttons/level/Level1_Pressed.png" id="2_h06n6"]
+[ext_resource type="Texture2D" uid="uid://dlfwexn33il5x" path="res://assets/sprites/buttons/level/Level1_Hover.png" id="3_7ost3"]
+[ext_resource type="Texture2D" uid="uid://dfrkg7vknl2o3" path="res://assets/sprites/buttons/level/Level2_Normal.png" id="4_u78re"]
+[ext_resource type="Texture2D" uid="uid://b2gbyjhd727r7" path="res://assets/sprites/buttons/level/Level2_Pressed.png" id="5_qjauc"]
+[ext_resource type="Texture2D" uid="uid://rsfui4v0v5xr" path="res://assets/sprites/buttons/level/Level2_Hover.png" id="6_lpm4t"]
+[ext_resource type="Texture2D" uid="uid://cdr23qlmsp8yl" path="res://assets/sprites/buttons/level/Level3_Normal.png" id="7_1s356"]
+[ext_resource type="Texture2D" uid="uid://b7p6010301px4" path="res://assets/sprites/buttons/level/Level3_Pressed.png" id="8_sk3cb"]
+[ext_resource type="Texture2D" uid="uid://bhdge2qmp5guy" path="res://assets/sprites/buttons/level/Level3_Hover.png" id="9_h07bw"]
+[ext_resource type="Texture2D" uid="uid://cyx5t22xwicvy" path="res://assets/sprites/background.jpg" id="10_aws0g"]
+
+[node name="LevelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h06n6")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.380392)
+offset_left = -128.0
+offset_top = -26.0
+offset_right = 1274.0
+offset_bottom = 675.0
+texture = ExtResource("10_aws0g")
+
+[node name="Level1" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 100.0
+offset_right = 648.0
+offset_bottom = 148.0
+texture_normal = ExtResource("1_y5nje")
+texture_pressed = ExtResource("2_h06n6")
+texture_hover = ExtResource("3_7ost3")
+
+[node name="Level2" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 284.0
+offset_right = 648.0
+offset_bottom = 332.0
+texture_normal = ExtResource("4_u78re")
+texture_pressed = ExtResource("5_qjauc")
+texture_hover = ExtResource("6_lpm4t")
+
+[node name="Level3" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 455.0
+offset_right = 648.0
+offset_bottom = 503.0
+texture_normal = ExtResource("7_1s356")
+texture_pressed = ExtResource("8_sk3cb")
+texture_hover = ExtResource("9_h07bw")
+
+[connection signal="pressed" from="Level1" to="." method="_on_level1_pressed"]
+[connection signal="pressed" from="Level2" to="." method="_on_level2_pressed"]
+[connection signal="pressed" from="Level3" to="." method="_on_level3_pressed"]
