@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4yeauusssk1g"]
+[gd_scene load_steps=7 format=3 uid="uid://c4yeauusssk1g"]
 
-[ext_resource type="PackedScene" uid="uid://cak8y50buds1u" path="res://scenes/NPC.tscn" id="1_uhqny"]
 [ext_resource type="PackedScene" uid="uid://ywxxd328rh7n" path="res://scenes/Floor.tscn" id="2_qifjx"]
 [ext_resource type="PackedScene" uid="uid://bkmujxhj836bo" path="res://scenes/npc_spawner.tscn" id="4_kl8ac"]
 [ext_resource type="PackedScene" uid="uid://cprefmyhmd0el" path="res://scenes/elevator.tscn" id="5_qifjx"]
@@ -24,10 +23,6 @@ position = Vector2(588, 408)
 
 [node name="Floor3" parent="." instance=ExtResource("2_qifjx")]
 position = Vector2(588, 200)
-
-[node name="NPC" parent="." instance=ExtResource("1_uhqny")]
-visible = false
-position = Vector2(1048, 534)
 
 [node name="NpcSpawner" parent="." instance=ExtResource("4_kl8ac")]
 position = Vector2(873, 286)
